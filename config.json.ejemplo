@@ -1,0 +1,6 @@
+{
+    "BD": "bd.db",
+    "SECRETO": "password",
+    "PUERTO": 3000,
+    "IP": "127.0.0.1"
+}

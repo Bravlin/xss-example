@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title Transacción exitosa
+        include common/headers.pug
+body
+    div.contenedor-pagina.d-flex.flex-column.justify-content-center
+        h1.text-center Pago!Seguro
+        h2.text-center.mt-4 Transacción exitosa
+        p.text-center ID de transacción: #{transaccion}
+        p.text-center Monto: $#{total_a_pagar}
+        h3.text-center.mt-3 Redireccionando a #{redireccion}
+    include common/scripts.pug
+    script.
+        setTimeout(function() {
+            let urlParams = new URLSearchParams(window.location.search);
+            window.location.href = urlParams.get('redireccion');
+         }, 5000);

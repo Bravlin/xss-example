@@ -1,0 +1,51 @@
+doctype html
+html
+    head
+        title Registro - Pago!Seguro
+        include common/headers.pug
+        style(type="text/css").
+            form {
+                width: 700px;
+            }
+            button {
+                width: 100%;
+            }
+    body
+        div.contenedor-pagina.d-flex.flex-column.justify-content-center
+            h1.text-center Pago!Seguro
+            h2.text-center.mt-4 Registro
+            if error
+                p.error.text-center.mt-4= error
+            form.row.mx-auto.mt-4(method="POST")
+                .form-group.text-left.col-6
+                    label(for="inputNombre") Nombre
+                    input#inputNombre(type="text", name="nombre", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputApellido") Apellido
+                    input#inputApellido(type="text", name="apellido", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputDireccion") Direccion
+                    input#inputDireccion(type="text", name="direccion", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputCiudad") Ciudad
+                    input#inputCiudad(type="text", name="ciudad", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputProvincia") Provincia / Estado
+                    input#inputProvincia(type="text", name="provincia", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputPais") País
+                    input#inputPais(type="text", name="pais", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputEmail") Email
+                    input#inputEmail(type="email", name="email", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputTelefono") Teléfono
+                    input#inputTelefono(type="text", name="telefono", class="form-control", required)
+                .form-group.text-left.col-6
+                    label(for="inputClave") Contraseña
+                    input#inputClave(type="password", name="clave", class="form-control" required)
+                .form-group.text-left.col-6
+                    label(for="inputValidarClave") Validar contraseña
+                    input#inputValidarClave(type="password", name="validar_clave", class="form-control", required)
+                button.button.btn.btn-primary.mt-3.mx-3(type="submit") Registrar
+        include common/scripts.pug

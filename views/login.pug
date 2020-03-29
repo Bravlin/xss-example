@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title Login - Pago!Seguro
+        include common/headers.pug
+        style(type="text/css").
+            button, a, form {
+                width: 500px;
+            }
+    body
+        div.contenedor-pagina.d-flex.flex-column.justify-content-center
+            h1.text-center Pago!Seguro
+            p.text-center Ingrese su email y su contraseña para comenzar
+            if error
+                p.error.text-center= error
+            form.text-center.mx-auto(method="POST")
+                .form-group.text-left
+                    label(for="inputEmail") Email
+                    input#inputEmail(type="email", name="email", class="form-control", required)
+                .form-group.text-left
+                    label(for="inputClave") Contraseña
+                    input#inputClave(type="password", name="clave", class="form-control", required)
+                button.button.btn.btn-primary(type="submit") Login
+            p.text-center.my-1 o
+            a#botonRegistrar.button.btn.btn-secondary.align-self-center Nueva cuenta
+        include common/scripts.pug
+        script.
+            document.getElementById('botonRegistrar').href = '/registro' + window.location.search;
