@@ -13,8 +13,9 @@ html
     body
         div.contenedor-pagina.d-flex.flex-column.justify-content-center
             h1.text-center Pago!Seguro
+            h2.text-center.mt-4!= 'Hola ' + nombre_completo
             h2.text-center.mt-4 Completar transacción
-            p.text-center ID de transacción: #{transaccion}
+            p.text-center!= 'ID de transacción: ' + transaccion
             form.row.mx-auto.mt-4(method="POST")
                 .form-group.text-left.col-12
                     label(for="inputNumeroTarjeta") Número de tarjeta
@@ -50,6 +51,6 @@ html
                 .form-group.text-left.col-6
                     label(for="inputTelefono") Teléfono
                     input#inputTelefono(type="text", name="telefono", class="form-control", required)
-                button.btn.btn-primary.mt-3.mx-3(type="submit") Pagar $#{total_a_pagar}
+                button.btn.btn-primary.mt-3.mx-3(type="submit")!= 'Pagar $' + total_a_pagar
         include common/scripts.pug
         script(src="js/pago.js")

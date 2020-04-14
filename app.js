@@ -117,6 +117,7 @@ app.post('/registro', function (req, res) {
 app.get('/pago', function (req, res) {
     if (req.session.id_cuenta) {
         let parametros = {
+            nombre_completo: req.session.nombre + ' ' + req.session.apellido,
             transaccion: req.query.transaccion,
             total_a_pagar: req.query.total_a_pagar,
             redireccion: req.query.redireccion
